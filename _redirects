@@ -1,0 +1,11 @@
+# Old WordPress URLs -> new pages (301 keeps SEO value)
+/appointment                     /book/                   301
+/appointment/                    /book/                   301
+/appointment-interior            /book-interior-detail/   301
+/appointment-interior/           /book-interior-detail/   301
+/appointment-exterior            /book-exterior-detail/   301
+/appointment-exterior/           /book-exterior-detail/   301
+/appointment-interior-exterior   /book-full-detail/       301
+/appointment-interior-exterior/  /book-full-detail/       301
+/gift-card                       /gift-cards/             301
+/gift-card/                      /gift-cards/             301
