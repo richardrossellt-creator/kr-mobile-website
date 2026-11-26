@@ -93,7 +93,7 @@
         <button class="btn btn-primary" type="submit">Check</button>
       </form>
       <div class="zip-result" id="zip-result" aria-live="polite" hidden></div>
-      <p class="zip-areas">Arlington · Annandale · Tysons · Vienna · Merrifield · Falls Church · Alexandria · McLean</p>
+      <p class="zip-areas">Arlington · Annandale · Tysons · Vienna · Merrifield · Fairfax · Falls Church · Alexandria · Springfield · McLean</p>
     </div>
   </div>
 </section>
@@ -268,7 +268,7 @@
       <div class="chips">
         <span>Rosslyn</span><span>Clarendon</span><span>Ballston</span><span>Courthouse</span><span>Crystal City</span><span>Pentagon City</span><span>Shirlington</span><span>Virginia Square</span>
       </div>
-      <p class="note" style="margin-top:0">We also serve Falls Church, Alexandria and McLean. Locations farther away, including Washington DC, are subject to confirmation. <a href="#zip">Check your ZIP code</a>.</p>
+      <p class="note" style="margin-top:0">We also serve Fairfax, Falls Church, Alexandria, Springfield, Burke, McLean and much of Northern Virginia with no travel fee. Washington DC and Maryland are subject to confirmation. <a href="#zip">Check your ZIP code</a>.</p>
     </div>
   </div>
 </section>
@@ -372,14 +372,18 @@
   }
   sizeButtons.forEach(function (b) { b.addEventListener('click', function () { setSize(+b.dataset.size); }); });
 
-  // Approved ZIP codes (service area knowledge base)
-  var VA = ('22201 22202 22203 22204 22205 22206 22207 22209 22210 22211 22212 22213 22214 22215 22216 22217 22219 22225 22226 22227 22230 22240 22241 22242 22243 22244 22245 22246 ' +
-            '22301 22302 22303 22304 22305 22306 22307 22310 22311 22312 22313 22314 22320 22331 22332 22333 22334 22350 ' +
-            '22040 22041 22042 22043 22044 22046 22101 22103 22106 ' +
-            // Annandale, Tysons, Vienna, Merrifield / Dunn Loring (pending owner review)
-            '22003 22102 22180 22181 22182 22027 22031 22081 22116').split(' ');
-  // DC: served, but each address is confirmed first
-  var DC = '20007 20008 20009 20010 20011 20015 20016 20017 20018 20036'.split(' ');
+  // Free travel: Virginia ZIP codes within 15 miles of our Annandale base (22003)
+  var VA = ('20109 20110 20111 20112 20113 20120 20121 20122 20124 20151 20153 20164 20166 20170 20171 20172 ' +
+            '20190 20191 20192 20194 20195 20196 22003 22009 22015 22027 22030 22031 22032 22033 22034 22035 ' +
+            '22036 22037 22038 22039 22040 22041 22042 22043 22044 22046 22060 22066 22067 22079 22081 22082 ' +
+            '22095 22096 22101 22102 22103 22106 22107 22108 22109 22116 22118 22119 22121 22122 22124 22125 ' +
+            '22150 22151 22152 22153 22156 22158 22159 22160 22161 22180 22181 22182 22183 22185 22191 22192 ' +
+            '22193 22194 22195 22199 22201 22202 22203 22204 22205 22206 22207 22209 22210 22211 22212 22213 ' +
+            '22214 22215 22216 22217 22219 22225 22226 22227 22230 22240 22241 22242 22243 22244 22245 22246 ' +
+            '22301 22302 22303 22304 22305 22306 22307 22308 22309 22310 22311 22312 22313 22314 22315 22320 ' +
+            '22331 22332 22333 22334 22350 ').trim().split(' ');
+  // Washington DC (200xx-205xx) and Maryland (206xx-209xx): served, but each address is confirmed first
+  function needsConfirmation(zip) { var p = +zip.slice(0, 3); return p >= 200 && p <= 209; }
   var BOOK = '/book/';
 
   var form = document.getElementById('zip-form');
@@ -404,9 +408,9 @@
     if (VA.indexOf(zip) !== -1) {
       show('ok', 'Good news, ' + zip + ' is in our service area.',
         'No travel fee. Some buildings and garages may need a quick access check. <a href="' + BOOK + '">Book your detail →</a>');
-    } else if (DC.indexOf(zip) !== -1) {
+    } else if (needsConfirmation(zip)) {
       show('warn', zip + ' is subject to confirmation.',
-        'We serve parts of Washington DC, but traffic, parking and building rules vary. Book with your full address and we\'ll confirm before your appointment, or call 571-571-1913. <a href="' + BOOK + '">Book your detail →</a>');
+        'We serve Washington DC and Maryland, but traffic, parking and building rules vary. Book with your full address and we\'ll confirm before your appointment, or call 571-571-1913. <a href="' + BOOK + '">Book your detail →</a>');
     } else {
       show('no', zip + ' is outside our standard service area.',
         'Service here is subject to confirmation. Call 571-571-1913 or email info@krmobilecardetailing.com with your full address and we\'ll let you know if we can reach you.');
