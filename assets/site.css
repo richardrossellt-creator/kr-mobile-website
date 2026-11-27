@@ -239,13 +239,3 @@ footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
 .side-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .side-links .btn { color: var(--ink); }
 
-/* Vehicle size guide */
-.size-guide { margin: -8px 0 26px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
-.size-guide summary { cursor: pointer; padding: 14px 16px; font-weight: 600; color: var(--accent-ink); }
-.size-guide summary:focus-visible { outline-offset: -3px; }
-.size-guide-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; padding: 4px 16px 8px; }
-.size-guide h3 { font-size: .95rem; margin-bottom: 8px; }
-.size-guide ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: .9rem; line-height: 1.7; }
-.size-guide .note { margin: 0; padding: 0 16px 16px; }
-@media (max-width: 860px) { .size-guide-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 460px) { .size-guide-grid { grid-template-columns: 1fr; } }
