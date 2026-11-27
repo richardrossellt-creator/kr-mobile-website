@@ -21,7 +21,7 @@
   "@type": "Service",
   "name": "Mobile Car Detailing in Merrifield, VA",
   "serviceType": "Mobile car detailing",
-  "provider": { "@type": "AutoWash", "name": "KR Mobile Car Detailing", "url": "https://krmobilecardetailing.com/", "telephone": "+1-571-571-1913" },
+  "provider": { "@type": "AutoWash", "@id": "https://krmobilecardetailing.com/#business", "name": "KR Mobile Car Detailing", "url": "https://krmobilecardetailing.com/", "telephone": "+1-571-571-1913" },
   "areaServed": { "@type": "City", "name": "Merrifield, VA" },
   "offers": { "@type": "AggregateOffer", "lowPrice": "99", "highPrice": "329", "priceCurrency": "USD" }
 }
@@ -33,6 +33,38 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://krmobilecardetailing.com/" },
     { "@type": "ListItem", "position": 2, "name": "Merrifield, VA", "item": "https://krmobilecardetailing.com/mobile-car-detailing-merrifield-va/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you detail my car at my building near the Mosaic District?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, as long as the building allows mobile detailing and we can park next to your vehicle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Merrifield inside your free travel zone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Merrifield and Dunn Loring are inside our free travel zone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my card be charged when I book?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your card only secures the appointment. You can cancel or reschedule for free up to 12 hours before."
+      }
+    }
   ]
 }
 </script>

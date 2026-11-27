@@ -246,3 +246,12 @@ footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
 footer .footer-cities { display: flex; flex-wrap: wrap; gap: 6px 14px; padding-block: 0 24px; border-top: 1px solid var(--hero-line); padding-top: 18px; }
 footer .wrap.footer-cities { justify-content: flex-start; }
 .cities.near { grid-template-columns: 1fr 1fr; }
+
+/* Price table */
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+.price-table { width: 100%; min-width: 560px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.price-table th, .price-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--line); }
+.price-table thead th { font: 600 .75rem/1.2 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.price-table tbody th { font-weight: 600; }
+.price-table td { font: 600 1rem/1.2 var(--f-mono); }
+.price-table tbody tr:last-child > * { border-bottom: 0; }
