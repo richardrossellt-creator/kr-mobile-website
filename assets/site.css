@@ -238,3 +238,11 @@ footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
 .side-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .side-links .btn { color: var(--ink); }
 
+
+/* City pages */
+.page-hero .hero-ctas { margin-top: 6px; }
+.price span:first-child { order: -1; }
+.checks li b { font-weight: 700; }
+footer .footer-cities { display: flex; flex-wrap: wrap; gap: 6px 14px; padding-block: 0 24px; border-top: 1px solid var(--hero-line); padding-top: 18px; }
+footer .wrap.footer-cities { justify-content: flex-start; }
+.cities.near { grid-template-columns: 1fr 1fr; }
