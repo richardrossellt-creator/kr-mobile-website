@@ -75,10 +75,9 @@ section.band { padding-block: clamp(56px, 8vw, 96px); }
 .top nav a { text-decoration: none; color: var(--hero-muted); }
 .top nav a:hover { color: var(--hero-ink); }
 .top-actions { display: flex; align-items: center; gap: 14px; }
-.top-phone { font: 600 .9rem/1 var(--f-mono); color: var(--hero-ink); text-decoration: none; white-space: nowrap; }
 .top .btn { min-height: 40px; padding: 0 16px; font-size: .88rem; }
 @media (max-width: 1020px) { .top nav { display: none; } }
-@media (max-width: 560px) { .brand span, .brand b { display: none; } .top-phone { font-size: .85rem; } }
+@media (max-width: 560px) { .brand span { display: none; } }
 
 /* Hero */
 .hero { background: var(--hero-bg); color: var(--hero-ink); padding-block: clamp(40px, 7vw, 88px) clamp(48px, 7vw, 96px); position: relative; overflow: hidden; }
